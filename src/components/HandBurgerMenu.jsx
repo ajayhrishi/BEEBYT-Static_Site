@@ -2,17 +2,21 @@ import { useState, useEffect } from "react";
 import handburgerClosed from "../assets/interactive_icons/closed.png";
 import handburgerOpened from "../assets/interactive_icons/opened.png";
 import { floating_elements } from "../styles/component_styles.jsx";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { scroll_capture } from "../redux/slices";
+import { throttle } from "lodash";
 
 const HandBurgerMenu = () => {
+  const dispatch = useDispatch();
   const [open, setOpened] = useState(false);
-  const scrolled_till = useSelector((state) => state.scroll.value);
-  const [activeSection, setActiveSection] = useState("");
+  const scrolled_to = useSelector((state) => state.scroll.value);
 
   const scrollToPosition = (num) => {
     window.scrollTo({ top: num, behavior: "smooth" });
   };
 
+  //--------------------- segment decide which section is active
+  const [activeSection, setActiveSection] = useState("first_");
   useEffect(() => {
     const sections = [
       { id: "home_page_main", name: "Home" },
@@ -25,15 +29,33 @@ const HandBurgerMenu = () => {
     // Determine the current active section based on scroll position
     const active = sections.find(
       (section) =>
-        scrolled_till >= document.getElementById(section.id).offsetTop &&
-        scrolled_till <
+        scrolled_to >= document.getElementById(section.id).offsetTop &&
+        scrolled_to <
           document.getElementById(section.id).offsetTop +
             document.getElementById(section.id).offsetHeight
     );
     if (active) {
       setActiveSection(active.name);
+      console.log(activeSection, "now active");
     }
-  }, [scrolled_till]);
+  }, [scrolled_to]);
+
+  //---------------------- Scroll dection and capture functionalities for the navebar
+
+  useEffect(() => {
+    // Scroll handler to dispatch the scroll position
+    const handleScroll = () => {
+      dispatch(scroll_capture(window.scrollY));
+    };
+
+    // Throttled scroll event listener
+    const throttledHandleScroll = throttle(handleScroll, 300);
+    window.addEventListener("scroll", throttledHandleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", throttledHandleScroll);
+    };
+  }, [dispatch]);
 
   return (
     <div
@@ -53,11 +75,7 @@ const HandBurgerMenu = () => {
         {/* Home Button */}
         <div
           name="button"
-          className={
-            activeSection === "Home"
-              ? floating_elements.active_button
-              : floating_elements.button
-          }
+          className={activeSection === "Home" ? `font-bold` : ``}
           onClick={() =>
             scrollToPosition(
               document.getElementById("home_page_main").offsetTop
@@ -70,11 +88,7 @@ const HandBurgerMenu = () => {
         {/* Services Button */}
         <div
           name="button"
-          className={
-            activeSection === "Services"
-              ? floating_elements.active_button
-              : floating_elements.button
-          }
+          className={activeSection === "Services" ? `font-bold` : ``}
           onClick={() =>
             scrollToPosition(
               document.getElementById("service_page_main_div").offsetTop
@@ -87,11 +101,7 @@ const HandBurgerMenu = () => {
         {/* Our Team Button */}
         <div
           name="button"
-          className={
-            activeSection === "Our Team"
-              ? floating_elements.active_button
-              : floating_elements.button
-          }
+          className={activeSection === "Our Team" ? `font-bold` : ``}
           onClick={() =>
             scrollToPosition(
               document.getElementById("our_team_page_main_div").offsetTop
@@ -105,9 +115,7 @@ const HandBurgerMenu = () => {
         <div
           name="button"
           className={
-            activeSection === "Get Free Consultancy"
-              ? floating_elements.active_button
-              : floating_elements.button
+            activeSection === "Get Free Consultancy" ? `font-bold` : ``
           }
           onClick={() =>
             scrollToPosition(

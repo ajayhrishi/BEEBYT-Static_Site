@@ -9,6 +9,7 @@ const Navbar = () => {
   const [active_page, set_active_page] = useState("null");
   //---------------------- Scroll dection and capture functionalities for the navebar
   const scrolled_to = useSelector((state) => state.scroll.value);
+
   const scrollToPosition = (num) => {
     window.scrollTo({ top: num, behavior: "smooth" });
   };
@@ -30,52 +31,29 @@ const Navbar = () => {
 
   //----------------- Position observer functionality with IntersectionObserver
 
+  const [activeSection, setActiveSection] = useState("first_");
   useEffect(() => {
-    const observerOptions = {
-      root: null,
-      threshold: 0.5,
-    };
-
-    const observerCallback = (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          console.log(entry.target.id);
-          set_active_page(entry.target.id);
-          console.log("the active page now: ", active_page);
-          // Dispatch the ID of the intersecting element
-        }
-      });
-    };
-
-    const observer = new IntersectionObserver(
-      observerCallback,
-      observerOptions
-    );
-    const IDs = [
-      "home_page_main",
-      "service_page_main_div",
-      "our_team_page_main_div",
-      "free_consultancy_main_div",
-      "contact_us_page_main",
+    const sections = [
+      { id: "home_page_main", name: "Home" },
+      { id: "service_page_main_div", name: "Services" },
+      { id: "our_team_page_main_div", name: "Our Team" },
+      { id: "free_consultancy_main_div", name: "Get Free Consultancy" },
+      { id: "contact_us_page_main", name: "Contact Us" },
     ];
 
-    IDs.forEach((id) => {
-      const element = document.getElementById(id);
-      if (element) {
-        observer.observe(element);
-      }
-    });
-
-    // Cleanup observer on component unmount
-    return () => {
-      IDs.forEach((id) => {
-        const element = document.getElementById(id);
-        if (element) {
-          observer.unobserve(element);
-        }
-      });
-    };
-  }, [dispatch]);
+    // Determine the current active section based on scroll position
+    const active = sections.find(
+      (section) =>
+        scrolled_to >= document.getElementById(section.id).offsetTop &&
+        scrolled_to <
+          document.getElementById(section.id).offsetTop +
+            document.getElementById(section.id).offsetHeight
+    );
+    if (active) {
+      setActiveSection(active.name);
+      console.log(activeSection, "now active");
+    }
+  }, [scrolled_to]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -86,7 +64,7 @@ const Navbar = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Render the navbar
+  // Render the navbar*********************************************** JSX Part
   return scrolled_to < 100 ? (
     <div name="navbar-parent" className={`${navbar_styles.navbar_parent}`}>
       <div
@@ -94,16 +72,12 @@ const Navbar = () => {
         className={`${navbar_styles.navbar_buttons_container}`}
       >
         <div
-          name="navbar-button-home"
+          name="navbar-button-services"
           className={`${navbar_styles.navbar_button}`}
-          onClick={() =>
-            scrollToPosition(
-              document.getElementById("home_page_main").offsetTop
-            )
-          }
         >
-          HOME
+          Home
         </div>
+
         <div
           name="navbar-button-services"
           className={`${navbar_styles.navbar_button}`}
@@ -158,7 +132,9 @@ const Navbar = () => {
   ) : (
     <div
       name="navbar-parent-variant"
-      className={`${navbar_styles.navbar_parent_varient}`}
+      className={`${navbar_styles.navbar_parent_varient}
+      ${activeSection === "Home" ? `font-bold` : ``}
+      `}
     >
       <div
         name="navbar-buttons-container-variant"
@@ -177,7 +153,9 @@ const Navbar = () => {
         </div>
         <div
           name="navbar-button-services-variant"
-          className={`${navbar_styles.navbar_button_varient}`}
+          className={`${navbar_styles.navbar_button_varient} ${
+            activeSection === "Services" ? `font-bold` : ``
+          }`}
           onClick={() =>
             scrollToPosition(
               document.getElementById("service_page_main_div").offsetTop
@@ -188,7 +166,9 @@ const Navbar = () => {
         </div>
         <div
           name="navbar-button-about-us-variant"
-          className={`${navbar_styles.navbar_button_varient}`}
+          className={`${navbar_styles.navbar_button_varient} ${
+            activeSection === "Our Team" ? `font-bold` : ``
+          }`}
           onClick={() =>
             scrollToPosition(
               document.getElementById("our_team_page_main_div").offsetTop
@@ -199,7 +179,9 @@ const Navbar = () => {
         </div>
         <div
           name="navbar-button-contact-us-variant"
-          className={`${navbar_styles.navbar_button_varient}`}
+          className={`${navbar_styles.navbar_button_varient} ${
+            activeSection === "Contact Us" ? `font-bold` : ``
+          }`}
           onClick={() =>
             scrollToPosition(
               document.getElementById("contact_us_page_main").offsetTop
@@ -215,7 +197,9 @@ const Navbar = () => {
         >
           <div
             name="consultancy-button-text-variant"
-            className={`${navbar_styles.get_free_consultancy_button_varient}`}
+            className={`${navbar_styles.get_free_consultancy_button_varient}
+            ${activeSection === "Get Free Consultancy" ? `font-bold` : ``}
+            `}
             onClick={() =>
               scrollToPosition(
                 document.getElementById("free_consultancy_main_div").offsetTop
