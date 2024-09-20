@@ -16,15 +16,15 @@ export const contact_us_page_styles = {
 
   segment: `h-[auto] 
   w-[50%] ph:w-[100%] 
-  m-[5px] flex items-center justify-center `,
+  m-[5px] flex items-center `,
   line_seperator: `w-[1px] h-[80%] ph:hidden`,
 
   //top div-left-segment-styles
   purple_container: ` flex flex-col justify-center items-center p-[5px] text-[white] 
   shadow-[0_10px_25px_rgba(0,0,0,0.8)] hover:shadow-[0_10px_25px_rgba(0,0,0,0.4)] transition-all
   bg-gradient-to-br from-[#2e004f] to-[#1c1c1d] rounded-[20px]
-  w-[400px] ph:w-[330px] mt-[70px]
-  h-[280px] 
+  w-[400px] ph:w-[90vw] mt-[80px]
+  h-[280px] ml-[auto] m-[20px]
   
 
  `,
@@ -38,10 +38,12 @@ export const contact_us_page_styles = {
   
   `,
   title_right_segment: `w-[100%] h-[20%] flex items-center justify-center font-[Inconsolata]`,
-  quick_mail_box: `w-[100%] h-[auto] bg-[#d9d9d9] rounded-[20px]
+  quick_mail_box: `w-[auto] h-[auto] bg-[#d9d9d9] rounded-[20px]
   flex items-center justify-center flex-col gap-[20px]
   shadow-[0_10px_25px_rgba(0,0,0,0.8)] hover:shadow-[0_10px_25px_rgba(0,0,0,0.4)] transition-all
-  mt-[10px] p-[20px]
+  mt-[10px] p-[20px] ml-[auto] mr-[auto] 
+
+  ph:w-[330px] ph:ml-[15px]
   `,
 
   input_wraper_top: `mb-[-13px] 

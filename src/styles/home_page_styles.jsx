@@ -60,7 +60,7 @@ export const bottom_navbar_styles = {
   navbar_homepage_button_icon: `cursor-pointer hover:scale-[1.1]
   m-[30px] ph:m-[15px]
   mt-[30px] tbl:mt-[20px]
-  h-[50px] ph:h-[6vh] tbl:h-[10vh]`,
+  h-[5vh] ph:h-[6vh] tbl:h-[10vh]`,
 };
 
 /*

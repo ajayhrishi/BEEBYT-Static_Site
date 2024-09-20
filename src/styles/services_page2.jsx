@@ -9,7 +9,7 @@ export const services_page2_styles = {
 
   slide: `bg-black bg-white p-6 max-w-sm  transition-all text-white flex flex-col items-center rounded-[10%] 
   shadow-[0_10px_25px_rgba(0,0,0,0.8)] hover:shadow-[0_10px_25px_rgba(0,0,0,0.4)] hover:translate-y-[-10px]
-  w-[320px] h-[370px] p-[30px] max-w-[calc(100%/3 - 2.5vw)] m-[5vh]`, // Adjusting the width here
+  w-[320px] h-[370px] p-[30px] m-[3vh]`, // Adjusting the width here
 
   slide_title: `mt-[20px] text-[30px] ph:text-[25px]`,
 
