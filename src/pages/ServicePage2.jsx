@@ -1,41 +1,50 @@
+import { useRef } from "react";
 import { services_page2_styles } from "../styles/services_page2.jsx";
 import paper_bg from "../assets/background_images/paper_background.png";
 import graphic_bg from "../assets/background_images/home_page_back_ground.png";
 
 const ServicePage2 = () => {
   const card_maker = (info) => {
-    if (info.bg === 1) {
-      return (
-        <div
-          className={services_page2_styles.slide}
-          key={info.title}
-          style={{
-            backgroundImage: `url(${graphic_bg})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        >
-          <div className={services_page2_styles.slide_title}>{info.title}</div>
-          <div className={services_page2_styles.slide_content}>{info.data}</div>
-        </div>
-      );
-    } else {
-      return (
-        <div
-          className={services_page2_styles.slide}
-          key={info.title}
-          style={{
-            color: `black`,
-            backgroundImage: `url(${paper_bg})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        >
-          <div className={services_page2_styles.slide_title}>{info.title}</div>
-          <div className={services_page2_styles.slide_content}>{info.data}</div>
-        </div>
-      );
-    }
+    const cardRef = useRef(null);
+
+    const handleMouseMove = (e) => {
+      if (cardRef.current) {
+        const { width, height, left, top } =
+          cardRef.current.getBoundingClientRect();
+        const xPos = ((e.clientX - left) / width) * 100; // X-axis percentage
+        const yPos = ((e.clientY - top) / height) * 100; // Y-axis percentage
+
+        // Move background position based on mouse position
+        cardRef.current.style.backgroundPosition = `${xPos}% ${yPos}%`;
+      }
+    };
+
+    const handleMouseLeave = () => {
+      // Reset background position when mouse leaves
+      if (cardRef.current) {
+        cardRef.current.style.backgroundPosition = "center";
+      }
+    };
+
+    return (
+      <div
+        className={services_page2_styles.slide}
+        key={info.title}
+        ref={cardRef}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+        style={{
+          backgroundImage:
+            info.bg === 1 ? `url(${graphic_bg})` : `url(${paper_bg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          color: info.bg === 2 ? "black" : "white", // Ensure text is readable
+        }}
+      >
+        <div className={services_page2_styles.slide_title}>{info.title}</div>
+        <div className={services_page2_styles.slide_content}>{info.data}</div>
+      </div>
+    );
   };
 
   const seo = {
@@ -71,7 +80,7 @@ const ServicePage2 = () => {
   const web_developement = {
     bg: 1,
     title: "Web Development",
-    data: "Web development involves building and maintaining websites to ensure functionality, performance, and user experience, helping businesses establish a strong online presence..",
+    data: "Web development involves building and maintaining websites to ensure functionality, performance, and user experience, helping businesses establish a strong online presence.",
   };
   const softwear_development = {
     bg: 1,
@@ -90,7 +99,7 @@ const ServicePage2 = () => {
     softwear_development,
   ];
 
-  //JSX element part
+  // JSX element part
   return (
     <div
       name="main_div"

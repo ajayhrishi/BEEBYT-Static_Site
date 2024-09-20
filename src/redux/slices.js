@@ -18,10 +18,9 @@ export const scrollSlice = createSlice({
 // Export the actions
 export const { scroll_capture } = scrollSlice.actions;
 
-// src/redux/store.js
-
 // Create the store
 // we are bundling the state also in the scroll name from here.
+
 export const store = configureStore({
   reducer: {
     scroll: scrollSlice.reducer,
