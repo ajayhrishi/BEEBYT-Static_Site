@@ -50,7 +50,7 @@ const OurTeam = () => {
 
   console.log("our team page rendered");
   return (
-    <div className={our_team_page_styles.main_div}>
+    <div className={our_team_page_styles.main_div} id="our_team_page_main_div">
       <div className={our_team_page_styles.content_segment}>
         <div name="top_div" className={our_team_page_styles.top_div}>
           <div name="ceo_details" className={our_team_page_styles.ceo_details}>
