@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.App {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+html,
+body {
+  margin: 0;
+  width: 100vw;
+  overflow-x: hidden;
+}
