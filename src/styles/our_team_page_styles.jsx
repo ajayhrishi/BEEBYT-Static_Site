@@ -6,7 +6,7 @@ export const our_team_page_styles = {
   h-[auto] flex relative z-0 items-center justify-center bg-[#cacacb]`,
 
   /**************** content segment **************/
-  content_segment: `${an} flex justify-center items-center flex-col h-[auto] lg:w-[80%] ph:w-[100%]
+  content_segment: `${an} flex justify-center items-center flex-col h-[auto] w-[80%] ph:w-[100%]
   bg-[#181818] 
   text-white rounded-[20px] p-[5vw]
   shadow-[10px_10px_30px_rgba(0,0,0,1)] hover:[5px_5px_10px_rgba(0,0,0,1)]
