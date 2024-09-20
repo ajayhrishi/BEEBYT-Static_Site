@@ -47,9 +47,11 @@ export const navbar_styles = {
 
   get_free_consultancy_button_background: `
   mt-[6%] ml-[3%] h-[34px] w-[137px] hover:cursor-pointer
-  bg-gradient-to-r from-red-500 via-yellow-500 to-green-500
-  transition-all duration-300 ease-in-out
+  bg-gradient-to-r from-blue-400 via-green-400 via-yellow-400 to-red-400
+  transition-all duration-300 ease-in-out  hover:duration-[1000ms]
   flex items-center justify-center text-white rounded-[94px]
+  bg-[length:200%_200%] bg-[0%_50%]
+  hover:bg-[100%_50%] hover:transition-all
   `,
 
   get_free_consultancy_button: `
@@ -73,18 +75,21 @@ export const navbar_styles = {
   hover:cursor-pointer hover:text-shadow whitespace-nowrap`,
 
   get_free_consultancy_button_background_varient: `
-   h-[33px] w-[135px] mb-[5px]
-  bg-gradient-to-r from-red-500 via-yellow-500 to-green-500
-  transition-all duration-300 ease-in-out
+  h-[33px] w-[135px] mb-[5px]
+  bg-gradient-to-r from-blue-400 via-green-400 via-yellow-400 to-red-400
+  transition-all duration-300 ease-in-out hover:duration-[1000ms]
   flex items-center justify-center text-white rounded-[94px]
-  hover:cursor-pointer`,
+  bg-[length:200%_200%] bg-[0%_50%]
+  hover:bg-[100%_50%] hover:transition-all hover:duration-[4000ms]
+  hover:cursor-pointer
+`,
 
   get_free_consultancy_button_varient: `
   bg-black h-[30px] w-[130px] transition-all duration-300 ease-in-out
   flex items-center justify-center rounded-[94px]
   text-white text-[12px]
   hover:cursor-pointer
-  `,
+`,
 };
 
 // Exporting the styles to use in components

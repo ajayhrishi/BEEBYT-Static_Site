@@ -5,7 +5,7 @@ import abhilash_img from "../assets/employees/abhilash.jpeg";
 import anshid_img from "../assets/employees/anshid.jpeg";
 import jamih_img from "../assets/employees/jamih.jpeg";
 import misla_img from "../assets/employees/misna.jpeg";
-import rishal_img from "../assets/employees/jamih.jpeg";
+import rishal_img from "../assets/employees/rishal.jpeg";
 import vishnu_img from "../assets/employees/vishnu.jpeg";
 import muhsina_img from "../assets/employees/muhsina.jpeg";
 
@@ -106,7 +106,7 @@ const OurTeam = () => {
           >
             {employees.map((emp) => {
               return (
-                <div name="emp_card" className={our_team_page_styles.emp_card}>
+                <div key={emp.name} className={our_team_page_styles.emp_card}>
                   <img
                     src={emp.img}
                     alt={emp.name}
