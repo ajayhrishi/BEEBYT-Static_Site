@@ -1,10 +1,10 @@
 //Icon imports
-import like_icon from "../assets/social_media_card_items/likes.png";
-import comment_icon from "../assets/social_media_card_items/comments.png";
-import share_icon from "../assets/social_media_card_items/shares.png";
-import save_icon from "../assets/social_media_card_items/save.png";
+import like_icon from "../assets/social_media_card_items/socialMediacard_icons/likes.png";
+import comment_icon from "../assets/social_media_card_items/socialMediacard_icons/comments.png";
+import share_icon from "../assets/social_media_card_items/socialMediacard_icons/shares.png";
+import save_icon from "../assets/social_media_card_items/socialMediacard_icons/save.png";
 import card_heading_logo from "../assets/logo.png";
-import card_3_dot_icon from "../assets/social_media_card_items/threedots.png";
+import card_3_dot_icon from "../assets/social_media_card_items/socialMediacard_icons/threedots.png";
 
 const SocialMediaCard = (info) => {
   const card_data = info.info; //extracting the data of the card.

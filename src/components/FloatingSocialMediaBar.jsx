@@ -19,7 +19,6 @@ const FloatingSocialMediaBar = () => {
   const scrolled_to = useSelector((state) => {
     return state.scroll.value;
   });
-  console.log(scrolled_to);
 
   if (scrolled_to > 700) {
     return (

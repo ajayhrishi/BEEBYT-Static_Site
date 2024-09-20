@@ -1,12 +1,14 @@
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
 
-import CallBack from "./CallBack.jsx";
-
 import { contact_us_page_styles } from "../styles/contact_us_page_styles.jsx";
-import whatsapp_transparent from "../assets/icons/whats_app_transparent.png";
-import send_icon from "../assets/icons/whatapp_send.png";
 import { email, DialMeLink, whatsAppLink, emailjsData } from "../data.jsx";
+
+//icons
+import send_icon from "../assets/icons/whatapp_send.png";
+import whatsapp_transparent from "../assets/icons/whatsapp.png";
+import call_now from "../assets/icons/whats_app_transparent.png";
+import gmail_icon from "../assets/icons/gmail.png";
 
 export const QuickEmailBox = () => {
   const form = useRef();
@@ -92,7 +94,7 @@ export const purple_contact_box = //---------------------- child
           </div>
           <img
             alt="whats_app"
-            src={whatsapp_transparent}
+            src={call_now}
             className={`${contact_us_page_styles.left_icon}`}
           />
         </div>
@@ -129,6 +131,11 @@ export const purple_contact_box = //---------------------- child
               beebytbusinesssolutions@gmail.com
             </p>
           </div>
+          <img
+            alt="whats_app"
+            src={gmail_icon}
+            className={`${contact_us_page_styles.left_icon}`}
+          />
         </div>
       </a>
     </div>

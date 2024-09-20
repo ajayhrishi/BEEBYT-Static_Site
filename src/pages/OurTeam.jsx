@@ -1,13 +1,13 @@
 import { our_team_page_styles } from "../styles/our_team_page_styles";
 import location_icon from "../assets/icons/location_icon.png";
-import CEO_picture from "../assets/employee/agresh.jpeg";
-import abhilash_img from "../assets/employee/abhilash.jpeg";
-import anshid_img from "../assets/employee/anshid.jpeg";
-import jamih_img from "../assets/employee/jamih.jpeg";
-import misla_img from "../assets/employee/misna.jpeg";
-import rishal_img from "../assets/employee/rishal.jpeg";
-import vishnu_img from "../assets/employee/vishnu.jpeg";
-import muhsina_img from "../assets/employee/muhsina.jpeg";
+import CEO_picture from "../assets/employees/agresh.jpeg";
+import abhilash_img from "../assets/employees/abhilash.jpeg";
+import anshid_img from "../assets/employees/anshid.jpeg";
+import jamih_img from "../assets/employees/jamih.jpeg";
+import misla_img from "../assets/employees/misna.jpeg";
+import rishal_img from "../assets/employees/jamih.jpeg";
+import vishnu_img from "../assets/employees/vishnu.jpeg";
+import muhsina_img from "../assets/employees/muhsina.jpeg";
 
 const abhilash = {
   name: "Abhilash",

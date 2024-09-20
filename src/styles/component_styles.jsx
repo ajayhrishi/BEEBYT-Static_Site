@@ -40,7 +40,7 @@ export const navbar_styles = {
 
   navbar_button: `transition-transform duration-300 ease-in-out
   font-inter flex text-[14px] tracking-[0.3em] text-white hover:scale-105 
-  hover:cursor-default hover:text-shadow mt-[7%] whitespace-nowrap
+  hover:cursor-pointer hover:text-shadow mt-[7%] whitespace-nowrap
   w-[150px] h-[30px]`, // Fixed height for consistency
 
   home_button: `w-[100px]`,
@@ -70,7 +70,7 @@ export const navbar_styles = {
 
   navbar_button_varient: `transition-transform duration-300 ease-in-out
   font-inter flex text-[14px] tracking-[0.3em] text-white hover:scale-105 
-  hover:cursor-default hover:text-shadow whitespace-nowrap`,
+  hover:cursor-pointer hover:text-shadow whitespace-nowrap`,
 
   get_free_consultancy_button_background_varient: `
    h-[33px] w-[135px] mb-[5px]

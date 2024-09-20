@@ -28,10 +28,12 @@ export const contact_us_page_styles = {
   
 
  `,
-  wraper: `bg-[#252833] opacity-70 h-[50px] w-[300px] m-[15px] rounded-[20px]`,
-  tags: `text-[13px] mt-[-10px] ml-[10px]`,
-  number: `text-[15px] ml-[20px] mt-[1px]`,
-  left_icon: `ml-[auto] mt-[-50px] h-[40px] w-[auto]`,
+  wraper: `bg-[#252833] opacity-70 h-[50px] w-[300px] m-[15px] rounded-[20px]
+  box hover:scale-[1.05] transition-all
+  `,
+  tags: `text-[13px] mt-[-15px] ml-[10px] hover:text-[white]`,
+  number: `text-[15px] ml-[20px] mt-[1px] hover:text-[white]`,
+  left_icon: `ml-[auto] mt-[-50px] h-[30px] w-[auto] `,
 
   //top div-right-segment-styles
   quick_mail_container: `w-[auto] h-[110%]  m-[2px] tbl:h-[50vw] tb:h-[50vw] 

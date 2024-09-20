@@ -1,8 +1,8 @@
 import { sale_page_styles } from "../styles/free_consultancy_page_styles";
-import background_image from "../assets/background_person.png";
-import black_line from "../assets/Line 10.png";
+import background_image from "../assets/background_images/background_person.png";
+import black_line from "../assets/component_images/Line 10.png";
 import whatsapp_icon from "../assets/icons/whats_app_transparent.png";
-import black_line_veritcal from "../assets/Line 11.png";
+import black_line_veritcal from "../assets/component_images/Line 11.png";
 import { DialMeLink, phonewithout91 } from "../data.jsx";
 import CallBack from "../components/CallBack.jsx";
 

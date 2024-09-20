@@ -1,5 +1,5 @@
 import { contact_us_page_styles } from "../styles/contact_us_page_styles";
-import line from "../assets/Line contactuspage.png";
+import line from "../assets/component_images/Line contactuspage.png";
 
 import {
   QuickEmailBox,
@@ -9,7 +9,7 @@ import twitter from "../assets/icons/TwitterWhite.png";
 import insta from "../assets/icons/InstaWhite.png";
 import linkedIn from "../assets/icons/LinkedInWhite.png";
 import location from "../assets/icons/location_icon.png";
-
+// quick email box and purple contact boxes are set as componets to not exceed the number line this page
 const ContactUsPage = () => {
   console.log("contact_us page rendered");
   console.log("end");
