@@ -1,15 +1,15 @@
 import { navbar_styles } from "../styles/component_styles";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
-import { throttle } from "lodash";
+
 import { scroll_capture } from "../redux/slices";
 
 const NaveBar = ({ element }) => {
   const dispatch = useDispatch();
   useEffect(() => {
-    const handleScroll = throttle(() => {
+    const handleScroll = () => {
       dispatch(scroll_capture(window.scrollY));
-    }, 400);
+    };
 
     window.addEventListener("scroll", handleScroll);
 
