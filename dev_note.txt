@@ -23,10 +23,11 @@ Future improvement should do once get free time.
 • Take suggestion from the Chat GPT and optimize the CSS codes.
 	• In Phone and Interface make the center cards looks enlarged using the Intersection methoads
     Stop the scroll flickering issue appearing on the touch screens and add proper touch holding animation to the card elements.
+    - optimize the images files and add the lazy loading the componets. 
+    - bundle the css styles to one sheet. 
 	• Implement the style where the page is poping up after reaching it's destination in the screen
 	• Make all the elements butter smooth. Consider tweaking the design if it causing trouble while doing it 
         - css optimization and changes in the design may required to completely remove the flickering effects of some elements. 
 	• Do all the testing's and make the website work in a good rating under 2g connection. - need to learn the testing before it. 
-	• Apply the video in the background if needed - check with CEO Agresh Agraghanian. 
-
-• Make the chat GPT review the code and add improvements until gets 10/10 ratings
+	• Apply the video in the background if needed - check with CEO Agresh Agraghanian.
+• Make the chat GPT review the code and add improvements until gets 10/10 ratings.
