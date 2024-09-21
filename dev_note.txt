@@ -1,0 +1,32 @@
+Chat GPT Rating now- 8.5 (puased the developement for now to learn about the testing phases, and optimization strategies)
+
+Optimization part on Beebyte - 09/19/2024 
+
+	• Done : Optimize the Social Media Card component to one jsx and render it based on the props 
+	• Done : Take the social Media component to outside the social Media cards folder. 
+	• Done : Stop all the child components from re rendering un necessary
+	• Done : Make a proper css property for the social media card to flex render in the page. 
+	• Done : Go through the pages to see if can avoid any repeated codes.
+	• Done : Arrange the Assets in a proper order. 
+	• Done : Apply the newly found icons inside the project where it was struggling to put them. 
+	• Done : Add box shaded for all the components and make it change along with hovering. 
+	• Done : Make sure the large screen are overly distributing the cards to its' length that ruining the style 
+	• Done : Fix the free consultancy buttons moving color effect
+	• Done : Make the navbar to capture the screen position and update in the navbar effects. 
+	
+
+
+Future improvement should do once get free time.  
+
+- Need to learn the testings in JEST .etc for more optimization and deep knowledge. 
+
+• Take suggestion from the Chat GPT and optimize the CSS codes.
+	• In Phone and Interface make the center cards looks enlarged using the Intersection methoads
+    Stop the scroll flickering issue appearing on the touch screens and add proper touch holding animation to the card elements.
+	• Implement the style where the page is poping up after reaching it's destination in the screen
+	• Make all the elements butter smooth. Consider tweaking the design if it causing trouble while doing it 
+        - css optimization and changes in the design may required to completely remove the flickering effects of some elements. 
+	• Do all the testing's and make the website work in a good rating under 2g connection. - need to learn the testing before it. 
+	• Apply the video in the background if needed - check with CEO Agresh Agraghanian. 
+
+• Make the chat GPT review the code and add improvements until gets 10/10 ratings
